@@ -7,7 +7,7 @@ import (
 
 func TestClientCreateVar(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.CreateVar(&Domain{Name: "foo"}, &Var{Name: "hello2", Value: "there"})
 	if err != nil {
 		t.Fatal(err)
@@ -16,7 +16,7 @@ func TestClientCreateVar(t *testing.T) {
 
 func TestClientGetVar(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	v, err := dc.GetVar(&Domain{Name: "foo"}, &Var{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
@@ -26,7 +26,7 @@ func TestClientGetVar(t *testing.T) {
 
 func TestClientGetVars(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	v, err := dc.GetVars(&Domain{Name: "foo"})
 	if err != nil {
 		t.Fatal(err)
@@ -36,7 +36,7 @@ func TestClientGetVars(t *testing.T) {
 
 func TestClientUpdateVar(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.UpdateVar(&Domain{Name: "foo"}, &Var{Name: "hello2", Value: "over"})
 	if err != nil {
 		t.Fatal(err)
@@ -52,7 +52,7 @@ func TestClientUpdateVar(t *testing.T) {
 
 func TestClientDeleteVar(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.DeleteVar(&Domain{Name: "foo"}, &Var{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
