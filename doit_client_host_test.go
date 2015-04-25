@@ -7,7 +7,7 @@ import (
 
 func TestClientCreateHost(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.CreateHost(&Domain{Name: "foo"}, &Host{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
@@ -16,7 +16,7 @@ func TestClientCreateHost(t *testing.T) {
 
 func TestClientGetHost(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	v, err := dc.GetHost(&Domain{Name: "foo"}, &Host{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
@@ -26,7 +26,7 @@ func TestClientGetHost(t *testing.T) {
 
 func testClientUpdateHost(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.UpdateHost(&Domain{Name: "foo"}, &Host{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
@@ -39,7 +39,7 @@ func testClientUpdateHost(t *testing.T) {
 
 func TestClientDeleteHost(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.DeleteHost(&Domain{Name: "foo"}, &Host{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
