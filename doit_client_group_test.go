@@ -7,7 +7,7 @@ import (
 
 func TestClientCreateGroup(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.CreateGroup(&Domain{Name: "foo"}, &Group{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
@@ -16,7 +16,7 @@ func TestClientCreateGroup(t *testing.T) {
 
 func TestClientGetGroup(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	v, err := dc.GetGroup(&Domain{Name: "foo"}, &Group{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
@@ -26,7 +26,7 @@ func TestClientGetGroup(t *testing.T) {
 
 func testClientUpdateGroup(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.UpdateGroup(&Domain{Name: "foo"}, &Group{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
@@ -39,7 +39,7 @@ func testClientUpdateGroup(t *testing.T) {
 
 func TestClientDeleteGroup(t *testing.T) {
 	dc := &DoitClient{}
-	dc.SetURL("http://localhost:8080/api/1")
+	dc.SetURL("http://localhost:8080/api/v1")
 	err := dc.DeleteGroup(&Domain{Name: "foo"}, &Group{Name: "hello2"})
 	if err != nil {
 		t.Fatal(err)
