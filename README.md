@@ -1,18 +1,5 @@
-doit-server
+doit-client
 ===========
 
-A golang server implementation of doit-server
+A golang implementation of doit-client
 
-Server API
-==========
-
-Hosts
------
-
-GET /api/1/host/{name}
-
-POST /api/1/host/{name}
-
-PUT /api/1/host/{name}
-
-DELETE /api/1/host/{name}
